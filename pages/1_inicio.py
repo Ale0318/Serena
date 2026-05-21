@@ -40,7 +40,7 @@ div.stButton > button {
     font-size: 24px;
     font-weight: bold;
     padding: 20px;
-    min-height: 80px;
+    min-height: 110px;
     transition: 0.3s;
     box-shadow: 0px 0px 20px rgba(255, 94, 138, 0.35);
 }
@@ -85,20 +85,21 @@ with col2:
 
     st.markdown("<br><br><br>", unsafe_allow_html=True)
 
-    if st.button("😣 Ansiedad"):
-        st.success("Respira conmigo. Esto pasará.")
+    fila1_col1, fila1_col2 = st.columns(2)
+    fila2_col1, fila2_col2 = st.columns(2)
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    with fila1_col1:
+        if st.button("😣 Ansiedad"):
+            st.success("Respira conmigo. Esto pasará.")
 
-    if st.button("😵 Abrumada"):
-        st.warning("Vamos paso a paso.")
+    with fila1_col2:
+        if st.button("😵 Abrumada"):
+            st.warning("Vamos paso a paso.")
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    with fila2_col1:
+        if st.button("😞 Tristeza"):
+            st.info("No tienes que cargar todo sola.")
 
-    if st.button("😞 Tristeza"):
-        st.info("No tienes que cargar todo sola.")
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    if st.button("😤 Estrés"):
-        st.success("Tu cuerpo necesita calma, no presión.")
+    with fila2_col2:
+        if st.button("😤 Estrés"):
+            st.success("Tu cuerpo necesita calma, no presión.")
