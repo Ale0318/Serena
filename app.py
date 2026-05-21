@@ -88,10 +88,10 @@ st.markdown("---")
 
 st.write("""
 SERENA utiliza:
-- respiración guiada
-- interacción visual
-- sonidos relajantes
-- apoyo emocional inmediato
+- Respiración guiada
+- Interacción visual
+- Sonidos relajantes
+- Apoyo emocional inmediato
 """)
 
 st.button("Comenzar")
