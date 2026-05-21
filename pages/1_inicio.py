@@ -32,18 +32,22 @@ p {
 }
 
 div.stButton > button {
-    width:100%;
-    border-radius:20px;
-    border:none;
-    background-color:#FF5E8A;
-    color:white;
-    font-size:20px;
-    font-weight:bold;
-    padding:15px;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    background-color: #FF5E8A;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    min-height: 80px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px rgba(255, 94, 138, 0.35);
 }
 
 div.stButton > button:hover {
-    background-color:#ff7ca2;
+    background-color: #ff7ca2;
+    transform: scale(1.03);
 }
 
 </style>
@@ -51,53 +55,50 @@ div.stButton > button:hover {
 
 # ===== CONTENIDO =====
 
+# ===== TÍTULO =====
+
 st.title("¿Cómo te sientes hoy?")
 
 st.markdown("""
 <div style="
 text-align:center;
 font-size:24px;
-margin-bottom:40px;
+margin-bottom:30px;
 ">
 Estoy aquí contigo.
 </div>
 """, unsafe_allow_html=True)
 
+# ===== LAYOUT PRINCIPAL =====
+
+col1, col2 = st.columns([1,1])
+
 # ===== IMAGEN =====
 
-st.image("Logo.png", width=280)
+with col1:
 
-st.markdown("<br>", unsafe_allow_html=True)
+    st.image("imagen1.png", width=450)
 
 # ===== BOTONES =====
 
-col1, col2 = st.columns(2)
+with col2:
 
-with col1:
+    st.markdown("<br><br><br>", unsafe_allow_html=True)
 
     if st.button("😣 Ansiedad"):
         st.success("Respira conmigo. Esto pasará.")
 
-    if st.button("😞 Tristeza"):
-        st.info("No tienes que cargar todo sola.")
-
-with col2:
+    st.markdown("<br>", unsafe_allow_html=True)
 
     if st.button("😵 Abrumada"):
         st.warning("Vamos paso a paso.")
 
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    if st.button("😞 Tristeza"):
+        st.info("No tienes que cargar todo sola.")
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
     if st.button("😤 Estrés"):
         st.success("Tu cuerpo necesita calma, no presión.")
-
-st.markdown("<br><br>", unsafe_allow_html=True)
-
-st.markdown("""
-<div style="
-text-align:center;
-font-size:28px;
-color:#F6E6B4;
-font-weight:bold;
-">
-No estás sola.
-</div>
-""", unsafe_allow_html=True)
