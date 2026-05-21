@@ -176,13 +176,49 @@ col1, col2 = st.columns([1,1])
 
 # ===== CÍRCULO =====
 
+# ===== TEXTO =====
+
 with col1:
+
+    st.title("Respira conmigo")
+
+    st.write("No necesitas resolver todo ahora.")
+
+    st.markdown("<br><br>", unsafe_allow_html=True)
+
+    if not st.session_state.ejercicio:
+
+        if st.button("Comenzar ejercicio"):
+            st.session_state.ejercicio = True
+            st.rerun()
+
+    else:
+
+        if st.button("Pausar ejercicio"):
+            st.session_state.ejercicio = False
+            st.rerun()
+
+        st.success("Sigue el ritmo de tu respiración.")
+
+# ===== CÍRCULO =====
+
+with col2:
 
     if st.session_state.ejercicio:
 
         st.markdown("""
         <div class="circle-container">
             <div class="circle"></div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    else:
+
+        st.markdown("""
+        <div class="circle-container">
+            <div class="circle" style="animation:none; opacity:0.5;">
+                <span style="font-size:28px;">PAUSADO</span>
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
