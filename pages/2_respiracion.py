@@ -83,37 +83,26 @@ header {
     font-size:42px;
     margin-top:40px;
     font-weight:bold;
+    line-height: 1.8;
+
+    animation: pulseText 8s infinite;
 }
 
-/* TEXTO DINÁMICO */
-
-.instruccion span::before {
-
-    content: "INHALA";
-
-    animation: breathingText 8s infinite;
-}
-
-@keyframes breathingText {
+@keyframes pulseText {
 
     0% {
-        content: "Inhala";
-        opacity: 1;
-    }
-
-    49% {
-        content: "Inhala";
-        opacity: 1;
+        opacity:0.5;
+        transform: scale(0.9);
     }
 
     50% {
-        content: "Exhala";
-        opacity: 1;
+        opacity:1;
+        transform: scale(1.1);
     }
 
     100% {
-        content: "Exhala";
-        opacity: 1;
+        opacity:0.5;
+        transform: scale(0.9);
     }
 }
 </style>
@@ -131,7 +120,7 @@ st.markdown("""
 
 st.markdown("""
 <div class="instruccion">
-    <span>Inhala... Exhala...
+Inhala<br>Exhala
 </div>
 """, unsafe_allow_html=True)
 
