@@ -123,15 +123,7 @@ with col1:
                 st.rerun()
 
 with col2:
-    st.markdown("""
-    <div style="
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        height:300px;
-        font-size:120px;
-    "Logo.png"</div>
-    """, unsafe_allow_html=True)
+    st.image("Logo.png", width=300)
 
 st.markdown("---")
 
