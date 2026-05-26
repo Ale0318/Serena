@@ -4,7 +4,7 @@ import time
 
 st.set_page_config(
     page_title="Serena",
-    page_icon="imagen0",
+    page_icon="imagen0.png",
     layout="centered"
 )
 
