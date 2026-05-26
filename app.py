@@ -130,7 +130,7 @@ with col2:
         justify-content:center;
         height:300px;
         font-size:120px;
-    ">🌸</div>
+    ">Logo.png</div>
     """, unsafe_allow_html=True)
 
 st.markdown("---")
